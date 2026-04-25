@@ -177,3 +177,30 @@ async function getLyricsSafe(artist, songTitle) {
 
   result.append(span);
 }
+
+//add dark mode --followed guide from https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f#:~:text=Calculate%20the%20new%20theme%20as,querySelector(%22html%22).
+const toggleButton = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme');
+
+// Check for used preference
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  if (currentTheme === 'dark') {
+    toggleButton.textContent = 'Switch to Light Mode';
+  }
+}
+
+// toggle 
+toggleButton.addEventListener('click', () => {
+  let theme = document.documentElement.getAttribute('data-theme');
+  
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    toggleButton.textContent = 'Switch to Dark Mode';
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    toggleButton.textContent = 'Switch to Light Mode';
+  }
+});
