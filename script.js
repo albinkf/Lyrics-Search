@@ -178,7 +178,7 @@ async function getLyricsSafe(artist, songTitle) {
   result.append(span);
 }
 
-//add dark mode --followed guide from https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f#:~:text=Calculate%20the%20new%20theme%20as,querySelector(%22html%22).
+//add dark mode-- assisted by google overview--followed guide from https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f#:~:text=Calculate%20the%20new%20theme%20as,querySelector(%22html%22).
 const toggleButton = document.getElementById('theme-toggle');
 const currentTheme = localStorage.getItem('theme');
 
